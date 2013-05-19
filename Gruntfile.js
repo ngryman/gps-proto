@@ -18,9 +18,13 @@ module.exports = function(grunt) {
 			all: ['Gruntfile.js', 'app/scripts/**/*.js', 'test/**/*.js']
 		},
 		gluejs: {
-			options: {
-				banner: '<%= meta.banner %>\n',
-				replace: { 'jquery': 'window.$' }
+			all: {
+				options: {
+					banner: '<%= meta.banner %>\n',
+					basepath: 'app/scripts',
+				},
+				src: 'app/scripts/**/*.js',
+				dest: 'app/app.js'
 			}
 		},
 		compass: {

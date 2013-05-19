@@ -45,6 +45,13 @@ header {
 		margin: 3rem 1.5rem;
 		@include border-radius();
 		background: #fff;
+		@include transform-origin(50%);
+		@include rotateY(0deg);
+		@include single-transition(transform .4s);
+
+		&.is-details {
+			@include rotateY(180deg);
+		}
 
 		&::after {
 			content: '';
@@ -79,8 +86,17 @@ header {
 			margin-right: .7rem;
 			width: 3rem;
 			height: 3rem;
-			background: #555;
 			vertical-align: middle;
+			background-image: url(images/uifaces.png);
+			background-position: -10px -10px;
+		}
+
+		/* fake random */
+		&:nth-child(1) .avatar {
+			background-position: -40px -10px;
+		}
+		&:nth-child(2) .avatar {
+			background-position: -110px -70px;
 		}
 
 		.name {
