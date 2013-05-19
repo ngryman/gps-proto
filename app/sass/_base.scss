@@ -17,14 +17,18 @@ html {
 
 body {
 	font-family: Helvetica, Arial, sans-serif;
-	font-size: 100%;
-	color: #555;
+	color: #222;
+	font-size: 200%;
 
 	/* enhances font rendering? */
 	-webkit-font-smoothing: antialiased;
 	text-rendering: optimizeLegibility;
 
 	@include user-select(none);
+}
+
+p {
+	margin: 0;
 }
 
 /** box sizing - only use box sizing on containers */

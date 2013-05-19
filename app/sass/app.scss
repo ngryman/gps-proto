@@ -7,4 +7,146 @@
 /** components */
 //@import 'buttons';
 
+$default-border-radius: 1rem;
+
+$header-height: 5rem;
+
 /** pages */
+main {
+	// width: 320px;
+	padding-top: $header-height;
+	height: 100%;
+}
+
+button {
+	margin: 0;
+	border: 0;
+	padding: 0;
+	background: transparent;
+}
+
+section {
+	height: 100%;
+	background: #ccc;
+	padding-top: .1rem;
+}
+
+header {
+	position: fixed;
+	width: 100%;
+	height: $header-height;
+	background: #fff;
+	z-index: 1;
+}
+
+#home {
+	.challenge {
+		position: relative;
+		margin: 3rem 1.5rem;
+		@include border-radius();
+		background: #fff;
+
+		&::after {
+			content: '';
+			position: absolute;
+			top: -1rem;
+			right: -1rem;
+			@include border-radius(50%);
+			width: 5rem;
+			height: 5rem;
+			text-align: center;
+			line-height: 5rem;
+			font-size: 2.5rem;
+			font-weight: bold;
+		}
+
+		&.is-todo::after {
+			content: '+';
+			background: rgba(#777, .5);
+		}
+
+		&.is-done::after {
+			content: '✔';
+			color: #fff;
+			background: rgba(#000, .7);
+		}
+
+		.content {
+			padding: 1.5rem;
+		}
+
+		.avatar {
+			margin-right: .7rem;
+			width: 3rem;
+			height: 3rem;
+			background: #555;
+			vertical-align: middle;
+		}
+
+		.name {
+			display: inline-block;
+			vertical-align: middle;
+			font-size: 75%;
+		}
+
+		.body {
+			margin-top: 1.5rem;
+			line-height: 1.5;
+		}
+
+		.action {
+			border: .2rem solid #000;
+			@include border-radius(.4rem);
+			padding: .1rem .3rem;
+		}
+
+		.actions {
+			position: relative;
+			@include border-bottom-radius();
+			height: 4.5rem;
+			background: #eee;
+			font-size: 0;
+
+			.stats,
+			.forward {
+				width: 50%;
+				height: 100%;
+				font-size: 2rem;
+			}
+
+			.stats {
+				padding-right: 5rem;
+			}
+
+			.forward {
+				padding-left: 5rem;
+			}
+
+			.add {
+				position: absolute;
+				left: 50%;
+				margin-left: -5rem;
+				@include border-bottom-radius();
+				width: 10rem;
+				height: 120%;
+				background: #888;
+				color: #fff;
+				font-size: 2rem;
+			}
+		}
+	}
+}
+
+
+
+
+
+#table {
+	display: table;
+	width: 100%;
+
+	.cell {
+		display: table-cell;
+		text-align: center;
+	}
+}

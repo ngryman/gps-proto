@@ -1,0 +1,64 @@
+$mq-small:   32rem  /* 320px  */ !default;
+$mq-normal:  40rem  /* 400px  */ !default;
+$mq-large:   68rem  /* 680px  */ !default;
+$mq-xlarge:  100rem /* 1000px */ !default;
+$mq-xxlarge: 128rem /* 1280px */ !default;
+
+//
+// small size
+//
+
+@mixin small {
+	@media (min-width: $mq-small) and (max-width: $mq-normal - .1) { @content; }
+}
+
+//
+// normal size
+//
+
+@mixin normal {
+	@media (min-width: $mq-normal) and (max-width: $mq-large - .1) { @content; }
+}
+
+@mixin min-normal {
+	@media (min-width: $mq-normal) { @content; }
+}
+
+//
+// large size
+//
+
+@mixin large {
+	@media (min-width: $mq-large) and (max-width: $mq-xlarge - .1) { @content; }
+}
+
+@mixin min-large {
+	@media (min-width: $mq-large) { @content; }
+}
+
+//
+// xlarge size
+//
+
+@mixin xlarge {
+	@media (min-width: $mq-xlarge) and (max-width: $mq-xxlarge - .1) { @content; }
+}
+
+@mixin min-xlarge {
+	@media (min-width: $mq-xlarge) { @content; }
+}
+
+//
+// xxlarge size
+//
+
+@mixin xxlarge {
+	@media (min-width: $mq-xxlarge) { @content; }
+}
+
+// high dpi screens have a 1.5 pixel ratio, not 2
+@mixin hidpi {
+	@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+		@content;
+	}
+}

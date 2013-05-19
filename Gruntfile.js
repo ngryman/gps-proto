@@ -30,6 +30,17 @@ module.exports = function(grunt) {
 				}
 			}
 		},
+		htmlmin: {
+			all: {
+				options: {
+					removeComments: true,
+					collapseWhitespace: true
+				},
+				files: {
+					'dist/index.html': 'app/index.html'
+				}
+			}
+		},
 		mochacli: {
 			options: {
 				ui: 'bdd',
@@ -43,8 +54,18 @@ module.exports = function(grunt) {
 			all: 'test/**/*.js'
 		},
 		watch: {
-			files: '<%= jshint.files %>',
+			files: ['<%= jshint.all %>', 'app/sass/**/*.scss'],
 			tasks: ['build']
+		},
+		connect: {
+			server: {
+				options: {
+					hostname: '*',
+					port: 3000,
+					base: 'app',
+					keepalive: true
+				}
+			}
 		}
 	});
 
@@ -52,8 +73,10 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-gluejs');
 	grunt.loadNpmTasks('grunt-contrib-compass');
+	grunt.loadNpmTasks('grunt-contrib-htmlmin');
 	grunt.loadNpmTasks('grunt-mocha-cli');
 	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-contrib-connect');
 
 	// alias and utils tasks
 	grunt.registerTask('test', ['jshint', 'mochacli']);

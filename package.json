@@ -1,28 +1,30 @@
 {
-	"name": "gps-proto",
-	"version": "0.0.1",
-	"description": "Grosse plotte sale prototype",
-	"author": "1337 members of GPS <ngryman@gmail.com>",
-	"license": "GPS",
-	"scripts": {
-		"test": "grunt test"
-	},
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/ngryman/gps-proto.git"
-	},
-	"engines": {
-		"node": ">= 0.10"
-	},
-	"devDependencies": {
-		"grunt": "~0.4.1",
-		"grunt-contrib-jshint": "~0.5.1",
-		"grunt-contrib-gluejs": "0.0.2",
-		"grunt-contrib-compass": "~0.2.0",
-		"grunt-mocha-cli": "~1.0.5",
-		"grunt-contrib-watch": "~0.4.3",
-		"chai": "~1.6.0",
-		"sinon": "~1.7.2",
-		"sinon-chai": "~2.4.0"
-	}
+  "name": "gps-proto",
+  "version": "0.0.1",
+  "description": "Grosse plotte sale prototype",
+  "author": "1337 members of GPS <ngryman@gmail.com>",
+  "license": "GPS",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ngryman/gps-proto.git"
+  },
+  "engines": {
+    "node": ">= 0.10"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-jshint": "~0.5.1",
+    "grunt-contrib-gluejs": "0.0.2",
+    "grunt-contrib-compass": "~0.2.0",
+    "grunt-mocha-cli": "~1.0.5",
+    "grunt-contrib-watch": "~0.4.3",
+    "chai": "~1.6.0",
+    "sinon": "~1.7.2",
+    "sinon-chai": "~2.4.0",
+    "grunt-contrib-connect": "~0.3.0",
+    "grunt-contrib-htmlmin": "~0.1.3"
+  }
 }
