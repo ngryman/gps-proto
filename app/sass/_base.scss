@@ -24,7 +24,11 @@ body {
 	-webkit-font-smoothing: antialiased;
 	text-rendering: optimizeLegibility;
 
+	/* no selection */
 	@include user-select(none);
+
+	/* no highlight color on tap */
+	-webkit-tap-highlight-color: transparent;
 }
 
 p {

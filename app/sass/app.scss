@@ -2,6 +2,7 @@
 @import 'compass';
 @import 'fonts';
 @import 'base';
+@import 'mq';
 //@import 'sprites';
 
 /** components */
@@ -13,9 +14,12 @@ $header-height: 5rem;
 
 /** pages */
 main {
-	// width: 320px;
 	padding-top: $header-height;
 	height: 100%;
+	@include min-normal {
+		margin: 0 auto;
+		width: $mq-normal;
+	}
 }
 
 button {
@@ -57,7 +61,7 @@ header {
 		margin: 3rem 1.5rem;
 		height: 18rem;
 		@include transform-style(preserve-3d);
-		@include single-transition(transform .5s linear);
+		@include single-transition(transform .3s);
 
 		&.is-details {
 			@include rotateY(-180deg);
