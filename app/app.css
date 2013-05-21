@@ -1,4 +1,4 @@
-@charset "UTF-8";
+@charset "CP850";
 /* normalize.css v2.0.1 | MIT License | git.io/normalize */
 /* ==========================================================================
    HTML5 display definitions
@@ -448,13 +448,12 @@ div {
 
 /** components */
 /** pages */
-/* line 16, sass/app.scss */
+/* line 17, sass/app.scss */
 main {
-  padding-top: 5rem;
   height: 100%;
 }
 @media (min-width: 40rem) {
-  /* line 16, sass/app.scss */
+  /* line 17, sass/app.scss */
   main {
     margin: 0 auto;
     width: 40rem;
@@ -477,15 +476,107 @@ section {
 }
 
 /* line 38, sass/app.scss */
+.hide-text, header nav a.nav-magnifier, header nav a.nav-profile {
+  text-indent: -999rem;
+}
+
+/* line 42, sass/app.scss */
 header {
-  position: fixed;
-  width: 100%;
   height: 5rem;
   background: #fff;
   z-index: 1;
 }
+@media (min-width: 40rem) {
+  /* line 42, sass/app.scss */
+  header {
+    margin: 0 auto;
+    width: 40rem;
+  }
+}
+/* line 51, sass/app.scss */
+header nav {
+  height: 100%;
+  position: relative;
+}
+/* line 55, sass/app.scss */
+header nav a {
+  height: 3rem;
+  width: 3rem;
+  top: 50%;
+  margin-top: -1.5rem;
+  position: absolute;
+  display: inline-block;
+  text-decoration: none;
+}
+/* line 64, sass/app.scss */
+header nav a.nav-magnifier {
+  left: 1rem;
+  background-image: url(images/magnifier.svg);
+  background-repeat: no-repeat;
+  background-position: 50%;
+}
+/* line 72, sass/app.scss */
+header nav a.nav-logo {
+  left: 50%;
+  width: 6rem;
+  margin-left: -3rem;
+  color: #666666;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+/* line 81, sass/app.scss */
+header nav a.nav-notification {
+  width: 3.5rem;
+  right: 5rem;
+  text-align: center;
+  background-color: #000;
+  color: #fff;
+  border-radius: .5rem;
+}
+/* line 89, sass/app.scss */
+header nav a.nav-notification::after {
+  left: 100%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-color: rgba(0, 0, 0, 0);
+  border-left-color: #000;
+  border-width: .6rem;
+  top: 50%;
+  margin-top: -.6rem;
+}
+/* line 104, sass/app.scss */
+header nav a.nav-profile {
+  right: 1rem;
+  background-image: url(images/uifaces.png);
+  background-position: -10px -10px;
+}
 
-/* line 47, sass/app.scss */
+/* line 114, sass/app.scss */
+.nav-cursor {
+  width: 0;
+  height: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -0.9rem;
+  position: absolute;
+  border-left: 0.9rem solid transparent;
+  border-right: 0.9rem solid transparent;
+  border-bottom: 1rem solid #cccccc;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transition: -webkit-transform 0.2s linear, 1s;
+  -moz-transition: -moz-transform 0.2s linear, 1s;
+  -o-transition: -o-transform 0.2s linear, 1s;
+  transition: transform 0.2s linear, 1s;
+}
+
+/* line 129, sass/app.scss */
 #home .challenge-wrapper {
   -webkit-perspective: 1000;
   -moz-perspective: 1000;
@@ -494,15 +585,15 @@ header {
   perspective: 1000;
   /* fake random */
 }
-/* line 51, sass/app.scss */
+/* line 133, sass/app.scss */
 #home .challenge-wrapper:nth-child(1) .avatar {
   background-position: -40px -10px;
 }
-/* line 54, sass/app.scss */
+/* line 136, sass/app.scss */
 #home .challenge-wrapper:nth-child(2) .avatar {
   background-position: -110px -70px;
 }
-/* line 59, sass/app.scss */
+/* line 141, sass/app.scss */
 #home .challenge {
   position: relative;
   margin: 3rem 1.5rem;
@@ -517,7 +608,7 @@ header {
   -o-transition: -o-transform 0.3s, 1s;
   transition: transform 0.3s, 1s;
 }
-/* line 66, sass/app.scss */
+/* line 148, sass/app.scss */
 #home .challenge.is-details {
   -webkit-transform: rotateY(-180deg);
   -moz-transform: rotateY(-180deg);
@@ -525,7 +616,7 @@ header {
   -o-transform: rotateY(-180deg);
   transform: rotateY(-180deg);
 }
-/* line 70, sass/app.scss */
+/* line 152, sass/app.scss */
 #home .challenge .face {
   position: absolute;
   -webkit-border-radius: 1rem;
@@ -542,7 +633,7 @@ header {
   -o-backface-visibility: hidden;
   backface-visibility: hidden;
 }
-/* line 78, sass/app.scss */
+/* line 160, sass/app.scss */
 #home .challenge .face.face-back {
   -webkit-transform: rotateY(-180deg);
   -moz-transform: rotateY(-180deg);
@@ -550,7 +641,7 @@ header {
   -o-transform: rotateY(-180deg);
   transform: rotateY(-180deg);
 }
-/* line 83, sass/app.scss */
+/* line 165, sass/app.scss */
 #home .challenge .face-front::after {
   content: '';
   position: absolute;
@@ -568,22 +659,22 @@ header {
   font-size: 2.5rem;
   font-weight: bold;
 }
-/* line 97, sass/app.scss */
+/* line 179, sass/app.scss */
 #home .challenge.is-todo .face-front::after {
   content: '+';
   background: rgba(119, 119, 119, 0.5);
 }
-/* line 102, sass/app.scss */
+/* line 184, sass/app.scss */
 #home .challenge.is-done .face-front::after {
   content: '✔';
   color: #fff;
   background: rgba(0, 0, 0, 0.7);
 }
-/* line 108, sass/app.scss */
+/* line 190, sass/app.scss */
 #home .challenge .content {
   padding: 1.5rem;
 }
-/* line 112, sass/app.scss */
+/* line 194, sass/app.scss */
 #home .challenge .avatar {
   margin-right: .7rem;
   width: 3rem;
@@ -592,18 +683,18 @@ header {
   background-image: url(images/uifaces.png);
   background-position: -10px -10px;
 }
-/* line 121, sass/app.scss */
+/* line 203, sass/app.scss */
 #home .challenge .name {
   display: inline-block;
   vertical-align: middle;
   font-size: 75%;
 }
-/* line 127, sass/app.scss */
+/* line 209, sass/app.scss */
 #home .challenge .body {
   margin-top: 1.5rem;
   line-height: 1.5;
 }
-/* line 132, sass/app.scss */
+/* line 214, sass/app.scss */
 #home .challenge .action {
   border: 0.2rem solid black;
   -webkit-border-radius: 0.4rem;
@@ -613,7 +704,7 @@ header {
   border-radius: 0.4rem;
   padding: 0.1rem 0.3rem;
 }
-/* line 138, sass/app.scss */
+/* line 220, sass/app.scss */
 #home .challenge .actions {
   position: absolute;
   bottom: 0;
@@ -638,21 +729,21 @@ header {
   -o-transform: translateZ(0);
   transform: translateZ(0);
 }
-/* line 149, sass/app.scss */
+/* line 231, sass/app.scss */
 #home .challenge .actions > button {
   width: 50%;
   height: 100%;
   font-size: 2rem;
 }
-/* line 155, sass/app.scss */
+/* line 237, sass/app.scss */
 #home .challenge .actions .stats {
   padding-right: 5rem;
 }
-/* line 159, sass/app.scss */
+/* line 241, sass/app.scss */
 #home .challenge .actions .forward {
   padding-left: 5rem;
 }
-/* line 163, sass/app.scss */
+/* line 245, sass/app.scss */
 #home .challenge .actions .add {
   position: absolute;
   left: 50%;
@@ -674,13 +765,13 @@ header {
   -o-backface-visibility: hidden;
   backface-visibility: hidden;
 }
-/* line 179, sass/app.scss */
+/* line 261, sass/app.scss */
 #home .challenge .face-back .actions > button {
   font-size: 1.4rem;
   font-weight: bold;
   text-transform: uppercase;
 }
-/* line 187, sass/app.scss */
+/* line 269, sass/app.scss */
 #home .challenge .close {
   position: absolute;
   top: 1rem;
