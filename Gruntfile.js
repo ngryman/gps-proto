@@ -21,6 +21,7 @@ module.exports = function(grunt) {
 			all: {
 				options: {
 					banner: '<%= meta.banner %>\n',
+					main: 'app.js',
 					basepath: 'app/scripts'
 				},
 				src: 'app/scripts/**/*.js',

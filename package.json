@@ -17,7 +17,7 @@
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-jshint": "~0.5.1",
-    "grunt-contrib-gluejs": "0.0.2",
+    "grunt-contrib-gluejs": "~0.0.3",
     "grunt-contrib-compass": "~0.2.0",
     "grunt-mocha-cli": "~1.0.5",
     "grunt-contrib-watch": "~0.4.3",
