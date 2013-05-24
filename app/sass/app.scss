@@ -144,6 +144,7 @@ header {
 			background: #eee;
 			font-size: 0;
 			@include backface-visibility(hidden);
+			@include translateZ(0); // this avoid add button to flicker when rotating challenge
 
 			> button {
 				width: 50%;
