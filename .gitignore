@@ -6,9 +6,12 @@
 node_modules
 npm-debug.log
 
-# compiled
+# cache
 .sass-cache
-app/app.*
+
+# dpd
+.dpd
+data/
 
 # OS
 .DS_Store
