@@ -7,10 +7,12 @@
 
 	<title>GPS</title>
 
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+	<meta name="viewport"
+		  content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 
+	<link rel="stylesheet" href="app.css">
 	<link rel="stylesheet" href="app.css">
 </head>
 
@@ -90,7 +92,7 @@
 		</div>
 
 		<div class="challenge-wrapper">
-			<article class="challenge is-done">
+			<article class="challenge is-done is-with-proof">
 				<div class="face face-front">
 					<div class="content">
 						<img class="avatar" src="images/empty.gif">
@@ -99,6 +101,15 @@
 						<p class="body">
 							<strong class="action">Coucher</strong> avec le mec le mieux membré de la Terre.
 						</p>
+
+						<div class="proof-image">
+							<img src="images/sample/1.jpg" alt="" class="is-selected"/>
+							<img src="images/sample/2.jpg" alt=""/>
+							<img src="images/sample/3.jpg" alt=""/>
+							<img src="images/sample/1.jpg" alt=""/>
+							<img src="images/sample/2.jpg" alt=""/>
+							<img src="images/sample/3.jpg" alt=""/>
+						</div>
 					</div>
 					<aside class="actions">
 						<button class="stats">✔</button>
@@ -118,21 +129,6 @@
 				</div>
 			</article>
 		</div>
-
-		<!-- <article class="challenge is-done">
-			<div class="content">
-				<img class="avatar" src="images/empty.gif">
-				<strong class="name">David Blais</strong>
-				<p class="body">
-					<strong class="action">Sortir</strong> une app web sur le app store.
-				</p>
-			</div>
-			<aside class="actions">
-				<button class="stats">✔</button>
-				<button class="add">+</button>
-				<button class="forward">✘</button>
-			</aside>
-		</article> -->
 
 	</section>
 	<!-- <section id="search"></section>
