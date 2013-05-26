@@ -44,6 +44,8 @@ header {
 }
 
 #home {
+	overflow: hidden;
+
 	.challenge-wrapper {
 		@include perspective(1000);
 
@@ -65,6 +67,35 @@ header {
 
 		&.is-details {
 			@include rotateY(-180deg);
+		}
+
+		&.is-with-proof {
+			height: 37rem;
+
+			.proof-image {
+				height: 20rem;
+
+				img {
+					user-drag: none;
+					-webkit-user-drag: none;
+					height:200px;
+					width:200px;
+					position:absolute;
+					-webkit-transform: translateX(-100%);
+
+					&.is-selected {
+						-webkit-transform: translateX(0%);
+					}
+
+					&.is-selected + img {
+						z-index: 1;
+					}
+
+					&.is-selected ~ img {
+						-webkit-transform: translateX(100%);
+					}
+				}
+			}
 		}
 
 		.face {
