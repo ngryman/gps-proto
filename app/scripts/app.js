@@ -5,17 +5,24 @@ $('main').on('tap', '.challenge .stats, .challenge .close', function() {
 });
 
 (function headerCursorBehavior() {
-    var $navCursor = $('.nav-cursor'),
-        $navItems = $('.nav-item');
+	$('.nav-item').on('tap', function() {
+        var $this = $(this), pos;
 
-    $navItems.on('tap', function() {
-        var $this = $(this);
+		// as logo is position with left 50% and jquery returns this value, this is much simple to explicitly set 0
+		// to translateX in order to get back to default position
+		if ($this.hasClass('nav-logo')) {
+			pos = 0;
+		}
+		else {
+			pos = $this.position().left + $this.outerWidth() / 2 - $('#nav').innerWidth() / 2;
+			// ensure that pos is an integer to avoid unwanted blurry effects
+			pos = Math.floor(pos);
+		}
 
-        $navItems.removeClass('is-selected');
-        $this.addClass('is-selected');
-
-        var pos = $this.position().left + ($this.outerWidth() - $this.closest('nav').innerWidth()) / 2;
-        $navCursor.css('transform', 'translateX(' + pos + 'px)');
+		// batch dom changes
+		$this.addClass('is-selected');
+		$('.nav-item.is-selected').removeClass('is-selected');
+		$('.nav-cursor').css('transform', 'translateX(' + pos + 'px)');
     });
 })();
 
