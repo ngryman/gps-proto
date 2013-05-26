@@ -157,30 +157,30 @@ header {
 			@include rotateY(-180deg);
 		}
 
-		&.is-with-proof {
+		&.with-proof {
 			height: 37rem;
 
 			.proof-image {
 				height: 20rem;
 
-				img {
+				.proof  {
+					position:absolute;
 					user-drag: none;
 					-webkit-user-drag: none;
-					height:200px;
-					width:200px;
-					position:absolute;
-					-webkit-transform: translateX(-100%);
+					height:20rem;
+					width:20rem;
+					@include translateX(-100%);
 
 					&.is-selected {
-						-webkit-transform: translateX(0%);
+						@include translateX(0%);
 					}
 
-					&.is-selected + img {
+					&.is-selected + .proof {
 						z-index: 1;
 					}
 
-					&.is-selected ~ img {
-						-webkit-transform: translateX(100%);
+					&.is-selected ~ .proof {
+						@include translateX(100%);
 					}
 				}
 			}

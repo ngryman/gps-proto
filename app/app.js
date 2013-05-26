@@ -33,7 +33,7 @@ $('main').on('tap', '.challenge .stats, .challenge .close', function() {
 
 $.Finger.flickDuration = 500;
 $('.challenge').on('flick', '.proof-image', function(e) {
-	var $selected = $('.is-selected', this),
+	var $selected = $(this).find('.is-selected'),
 		$newSelected;
 
 	$newSelected = e.direction < 0 ? $selected.next('img') : $selected.prev('img');
