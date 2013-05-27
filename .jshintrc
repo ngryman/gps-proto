@@ -23,7 +23,7 @@
 	"laxbreak"    : false,
 	"bitwise"     : true,
 	"boss"        : true,
-	"curly"       : true,
+	"curly"       : false,
 	"eqeqeq"      : false,
 	"eqnull"      : false,
 	"evil"        : false,

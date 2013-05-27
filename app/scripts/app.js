@@ -11,6 +11,8 @@ $('main').on('flick', '.challenge .proof-photos', function(e) {
 	var $selected = $(this).find('.is-selected'),
 		$newSelected;
 
+	if ('horizontal' != e.orientation) return;
+
 	$newSelected = e.direction < 0 ? $selected.next('img') : $selected.prev('img');
 	if ($newSelected.length) {
 		$selected.removeClass('is-selected');
