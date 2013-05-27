@@ -1,5 +1,7 @@
 'use strict';
 
+// always prevent default browser behaviors
+$.Finger.preventDefault = true;
 // change default flick time to 500ms
 $.Finger.flickDuration = 500;
 

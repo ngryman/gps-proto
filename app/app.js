@@ -5,6 +5,8 @@
 require.m = [];
 require.m[0] = { "app.js": function(module, exports, require){'use strict';
 
+// always prevent default browser behaviors
+$.Finger.preventDefault = true;
 // change default flick time to 500ms
 $.Finger.flickDuration = 500;
 
@@ -15,7 +17,7 @@ $('main').on('tap', '.challenge .stats, .challenge .close', function() {
 $('main').on('flick', '.challenge .proof-photos', function(e) {
 	var $selected = $(this).find('.is-selected'),
 		$newSelected;
-	
+
 	if ('horizontal' != e.orientation) return;
 
 	$newSelected = e.direction < 0 ? $selected.next('img') : $selected.prev('img');
