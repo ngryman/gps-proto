@@ -29,6 +29,8 @@ body {
 
 	/* no highlight color on tap */
 	-webkit-tap-highlight-color: transparent;
+	/* no menu on link tap-hold */
+	-webkit-touch-callout: none;
 }
 
 p {

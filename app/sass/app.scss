@@ -51,6 +51,7 @@ section {
 
 header {
 	position: fixed;
+	z-index: 1;
 	padding: $header-padding;
 	background: #fff;
 	width: 100%;
@@ -149,7 +150,6 @@ header {
 	.challenge {
 		position: relative;
 		margin: 3rem 1.5rem;
-		height: 18rem;
 		@include transform-style(preserve-3d);
 		@include single-transition(transform .3s);
 
@@ -157,29 +157,28 @@ header {
 			@include rotateY(-180deg);
 		}
 
-		&.with-proof {
-			height: 37rem;
+		.proof {
+			position: relative;
+			padding-bottom: 100%;
 
-			.proof-image {
-				height: 20rem;
-
-				.proof  {
-					position:absolute;
-					user-drag: none;
-					-webkit-user-drag: none;
-					height:20rem;
-					width:20rem;
+			&.proof-photos {
+				.proof-photo  {
+					position: absolute;
+					width: 100%;
+					height: 100%;
 					@include translateX(-100%);
+					@include backface-visibility(hidden);
+					-webkit-user-drag: none;
 
 					&.is-selected {
-						@include translateX(0%);
+						@include translateX(0);
 					}
 
-					&.is-selected + .proof {
+					&.is-selected + .proof-photo {
 						z-index: 1;
 					}
 
-					&.is-selected ~ .proof {
+					&.is-selected ~ .proof-photo {
 						@include translateX(100%);
 					}
 				}
@@ -187,15 +186,29 @@ header {
 		}
 
 		.face {
-			position: absolute;
 			@include border-radius();
 			width: 100%;
-			height: 100%;
 			background: #fff;
 			@include backface-visibility(hidden);
 
 			&.face-back {
 				@include rotateY(-180deg);
+			}
+		}
+
+		.face-back {
+			position: absolute;
+			top: 0;
+			height: 100%;
+
+			.content {
+				padding-bottom: 4.5rem;
+				height: 100%;
+			}
+
+			.actions {
+				position: absolute;
+				bottom: 0;
 			}
 		}
 
@@ -255,8 +268,6 @@ header {
 		}
 
 		.actions {
-			position: absolute;
-			bottom: 0;
 			@include border-bottom-radius();
 			width: 100%;
 			height: 4.5rem;

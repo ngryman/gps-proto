@@ -1,7 +1,21 @@
 'use strict';
 
+// change default flick time to 500ms
+$.Finger.flickDuration = 500;
+
 $('main').on('tap', '.challenge .stats, .challenge .close', function() {
     $(this).closest('.challenge').toggleClass('is-details');
+});
+
+$('main').on('flick', '.challenge .proof-photos', function(e) {
+	var $selected = $(this).find('.is-selected'),
+		$newSelected;
+
+	$newSelected = e.direction < 0 ? $selected.next('img') : $selected.prev('img');
+	if ($newSelected.length) {
+		$selected.removeClass('is-selected');
+		$newSelected.addClass('is-selected');
+	}
 });
 
 (function headerCursorBehavior() {
@@ -25,16 +39,3 @@ $('main').on('tap', '.challenge .stats, .challenge .close', function() {
 		$('.nav-cursor').css('transform', 'translateX(' + pos + 'px)');
     });
 })();
-
-$.Finger.flickDuration = 500;
-$('.challenge').on('flick', '.proof-image', function(e) {
-	var $selected = $(this).find('.is-selected'),
-		$newSelected;
-
-	$newSelected = e.direction < 0 ? $selected.next('img') : $selected.prev('img');
-
-	if ($newSelected.length) {
-		$selected.removeClass('is-selected');
-		$newSelected.addClass('is-selected');
-	}
-});
