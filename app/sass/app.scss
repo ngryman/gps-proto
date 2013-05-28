@@ -16,6 +16,12 @@ $header-padding: $header-height * .2;
 $nav-logo-width: 10rem;
 $nav-item-size: $header-height - $header-padding * 2;
 
+$color-light-gray: rgba(0, 0, 0, .16);
+$color-medium-gray: rgba(178, 178, 178, .24);
+$color-gray: rgb(178, 178, 178);
+$color-dark-gray: rgba(0, 0, 0, .6);
+$color-xdark-gray: rgb(43, 43, 43);
+
 /** pages */
 main {
 	padding-top: $header-height;
@@ -35,7 +41,7 @@ button {
 
 section {
 	height: 100%;
-	background: #ccc;
+	background: $color-light-gray;
 	padding-top: .1rem;
 }
 
@@ -68,7 +74,7 @@ header {
 		bottom: 0;
 		left: 50%;
 		margin-left: -0.9rem;
-		@include triangle(bottom, .9rem, #ccc);
+		@include triangle(bottom, .9rem, $color-light-gray);
 		@include translateX(0);
 		@include single-transition(transform .2s);
 		@include transform-origin(50%);
@@ -97,7 +103,7 @@ header {
 		left: 50%;
 		margin-left: -$nav-logo-width / 2;
 		width: $nav-logo-width;
-		color: #666;
+		color: $color-dark-gray;
 		font-weight: bold;
 		font-size: 2.6rem;
 		text-align: center;
@@ -215,26 +221,28 @@ header {
 		.face-front::after {
 			content: '';
 			position: absolute;
-			top: -1rem;
-			right: -1rem;
+			top: -1.2rem;
+			right: -1.2rem;
 			@include border-radius(50%);
-			width: 5rem;
-			height: 5rem;
+			width: 6rem;
+			height: 6rem;
 			text-align: center;
-			line-height: 5rem;
-			font-size: 2.5rem;
+			line-height: 6rem;
+			font-size: 3rem;
 			font-weight: bold;
 		}
 
 		&.is-todo .face-front::after {
 			content: '+';
-			background: rgba(#777, .5);
+			background: $color-light-gray;
+			font-family: 'Arial Black';
+			font-size: 2.5rem;
 		}
 
 		&.is-done .face-front::after {
-			content: '✔';
-			color: #fff;
-			background: rgba(#000, .7);
+			content: '';
+			background: $color-dark-gray url(images/checked.svg) no-repeat center;
+			background-size: 3rem;
 		}
 
 		.content {
@@ -262,7 +270,7 @@ header {
 		}
 
 		.action {
-			border: .2rem solid #000;
+			border: .2rem solid $color-dark-gray;
 			@include border-radius(.4rem);
 			padding: .1rem .3rem;
 		}
@@ -271,7 +279,7 @@ header {
 			@include border-bottom-radius();
 			width: 100%;
 			height: 4.5rem;
-			background: #eee;
+			background: $color-medium-gray;
 			font-size: 0;
 			@include backface-visibility(hidden);
 			@include translateZ(0);
@@ -284,11 +292,17 @@ header {
 			}
 
 			.stats {
-				padding-right: 5rem;
+				padding: 1rem 5rem 1rem 1rem;
+				@include hide-text;
+				background: url(images/stats.svg) center no-repeat;
+				background-origin: content-box;
 			}
 
 			.forward {
-				padding-left: 5rem;
+				padding: .5rem .5rem .5rem 5rem;
+				@include hide-text;
+				background: url(images/sword.svg) center no-repeat;
+				background-origin: content-box;
 			}
 
 			.add {
@@ -298,9 +312,11 @@ header {
 				@include border-bottom-radius();
 				width: 10rem;
 				height: 120%;
-				background: #888;
+				background: $color-gray;
 				color: #fff;
-				font-size: 2rem;
+				font-family: 'Arial Black';
+				font-size: 3rem;
+				line-height: 3rem;
 				@include backface-visibility(hidden);
 			}
 		}
