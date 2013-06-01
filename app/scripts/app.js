@@ -6,7 +6,7 @@ $.Finger.preventDefault = true;
 $.Finger.flickDuration = 500;
 
 $('main').on('tap', '.challenge .stats, .challenge .close', function() {
-    $(this).closest('.challenge').toggleClass('is-details');
+	$(this).closest('.challenge').toggleClass('is-details');
 });
 
 $('main').on('flick', '.challenge .proof-photos', function(e) {
@@ -26,7 +26,7 @@ $('main').on('flick', '.challenge .proof-photos', function(e) {
 	var currentPage = 'home';
 
 	$('.nav-item').on('tap', function() {
-        var $this = $(this),
+		var $this = $(this),
 			page = $this.data('page'),
 			pos;
 
@@ -54,5 +54,5 @@ $('main').on('flick', '.challenge .proof-photos', function(e) {
 		$('#' + currentPage).removeClass('is-current');
 		$('#' + page).addClass('is-current');
 		currentPage = page;
-    });
+	});
 })();
