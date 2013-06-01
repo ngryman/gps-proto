@@ -22,6 +22,16 @@ $('main').on('flick', '.challenge .proof-photos', function(e) {
 	}
 });
 
+$('.tab-container').on('tap', '.tab-title', function(){
+	var tabToShow = $(this).attr('class').replace(/(tab-title|visible|tab-| )/g,'');
+
+	$('.tab-title').removeClass('visible');
+	$('.tab-content').removeClass('visible');
+
+	$('.tab-' + tabToShow).addClass('visible');
+	$('.content-'+ tabToShow).addClass('visible');
+});
+
 (function navigation() {
 	var currentPage = 'home';
 
