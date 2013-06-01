@@ -356,3 +356,51 @@ header {
 		visibility: visible;
 	}
 }
+
+#notifications {
+	.tab-container {
+		border: 0.1rem solid;
+		background-color: #8D8D8D;
+		text-align: center;
+	}
+
+	.tab-title {
+		height: 3rem;
+		width: 18rem;
+		display: inline-block;
+		margin-top: 1rem;
+		color: #7D7D7D;
+		background-color: #959595;
+		vertical-align: middle;
+		line-height: 3rem;
+		text-transform:uppercase;
+		@include border-top-radius();
+		cursor: pointer;
+
+		.count {
+			color: #B9B9B9;
+			background-color: #7B7B7B;
+			padding: 0 .5rem;
+			@include border-radius(3px);
+		}
+
+		&.visible {
+			color: #B3B3B3;
+			background-color: #D5D5D5;
+
+			.count {
+				color: #717171;
+				background-color: #C1C1C1;
+			}
+		}
+	}
+
+	.tab-content {
+		display:none;
+
+		&.visible {
+			display:block;
+			background-color: #D5D5D5;
+		}
+	}
+}

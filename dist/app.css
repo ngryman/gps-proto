@@ -256,8 +256,8 @@ figure {
  */
 /* line 262, sass/_normalize.scss */
 fieldset {
-  border: 1px solid #c0c0c0;
-#c0c0c0;
+	border: 1px solid #c0c0c0;
+	#c0c0c0;
 	margin: 0 2px;
 	padding: 0.35em 0.625em 0.75em;
 }
@@ -867,9 +867,9 @@ header .nav-cursor {
 
 /* line 329, sass/app.scss */
 .page {
-  display: none;
+	display: none;
 }
 /* line 332, sass/app.scss */
 .page.is-visible {
-  display: block;
+	display: block;
 }
