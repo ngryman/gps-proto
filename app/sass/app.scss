@@ -1,3 +1,5 @@
+@charset "utf-8";
+
 @import 'normalize';
 @import 'compass';
 @import 'fonts';
@@ -88,12 +90,12 @@ header {
 		text-decoration: none;
 	}
 
-	.nav-magnifier {
+	.nav-discover {
 		@extend .hide-text;
 		background: url(images/magnifier.svg);
 	}
 
-	.nav-logo {
+	.nav-home {
 		left: 50%;
 		margin-left: -$nav-logo-width / 2;
 		width: $nav-logo-width;
@@ -104,7 +106,7 @@ header {
 		text-transform: uppercase;
 	}
 
-	.nav-notification {
+	.nav-notifications {
 		@include border-radius(.75rem);
 		background-color: #000;
 		width: 3.5rem;
@@ -321,5 +323,13 @@ header {
 			right: 1rem;
 			color: #ccc;
 		}
+	}
+}
+
+.page {
+	display: none;
+
+	&.is-visible {
+		display: block;
 	}
 }
