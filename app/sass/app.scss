@@ -171,7 +171,7 @@ header {
 			padding-bottom: 100%;
 
 			&.proof-photos {
-				.proof-photo  {
+				.proof-photo {
 					position: absolute;
 					width: 100%;
 					height: 100%;
@@ -373,7 +373,7 @@ header {
 		background-color: #959595;
 		vertical-align: middle;
 		line-height: 3rem;
-		text-transform:uppercase;
+		text-transform: uppercase;
 		@include border-top-radius();
 		cursor: pointer;
 
@@ -396,11 +396,35 @@ header {
 	}
 
 	.tab-content {
-		display:none;
+		display: none;
 
 		&.visible {
-			display:block;
+			display: block;
 			background-color: #D5D5D5;
+		}
+	}
+}
+
+#profile {
+	color: #535353;
+	background-color: #8D8D8D;
+	.profile {
+		.avatar {
+			height: 6rem;
+			width: 6rem;
+		}
+		button {
+			padding: 0.7rem;
+			@include border-radius(.75rem);
+			background-color: black;
+			color: white;
+		}
+	}
+	.numbers {
+		border-top: .2rem solid #4D4D4D;
+		border-bottom: .2rem solid #4D4D4D;
+		div {
+			display: inline-block;
 		}
 	}
 }
