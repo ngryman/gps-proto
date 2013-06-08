@@ -70,11 +70,23 @@ module.exports = function(grunt) {
 				base: 'app',
 				keepalive: true
 			},
-			all: {}
+			all: {},
+			dist: {
+				options: { base: 'dist' }
+			}
 		},
 		open: {
 			all: {
 				path: 'http://localhost:<%= connect.options.port %>'
+			}
+		},
+		copy: {
+			dist: {
+				files: [{ expand: true, cwd: 'app', dest: 'dist', src: [
+					'*.{html,js,css,txt}',
+					'images/{,*/}*',
+					'fonts/*'
+				]}]
 			}
 		}
 	});
@@ -85,8 +97,12 @@ module.exports = function(grunt) {
 	// alias and utils tasks
 	grunt.registerTask('test', ['jshint', 'mochacli']);
 	grunt.registerTask('build', ['test', 'gluejs', 'compass']);
-	grunt.registerTask('preview', ['open', 'connect']);
+	grunt.registerTask('preview', ['open', 'connect:all']);
+	grunt.registerTask('preview:dist', ['open', 'connect:dist']);
 
 	// default task
 	grunt.registerTask('default', ['test']);
+
+	// dist task - bundle everything for production
+	grunt.registerTask('dist', ['copy:dist']);
 };
