@@ -67,12 +67,11 @@ module.exports = function(grunt) {
 			options: {
 				hostname: '*',
 				port: 3000,
-				base: 'app',
-				keepalive: true
+				base: 'app'
 			},
 			all: {},
 			dist: {
-				options: { base: 'dist' }
+				options: { base: 'dist', keepalive: true }
 			}
 		},
 		open: {
@@ -101,7 +100,7 @@ module.exports = function(grunt) {
 	grunt.registerTask('preview:dist', ['open', 'connect:dist']);
 
 	// default task
-	grunt.registerTask('default', ['test']);
+	grunt.registerTask('default', ['preview', 'watch']);
 
 	// dist task - bundle everything for production
 	grunt.registerTask('dist', ['copy:dist']);
