@@ -22,13 +22,19 @@ $('main').on('flick', '.challenge .proof-photos', function(e) {
 	}
 });
 
-(function headerCursorBehavior() {
+(function navigation() {
+	var currentPage = 'home';
+
 	$('.nav-item').on('tap', function() {
-        var $this = $(this), pos;
+        var $this = $(this),
+			page = $this.data('nav'),
+			pos;
+
+		if (page == currentPage) return;
 
 		// as logo is position with left 50% and jquery returns this value, this is much simple to explicitly set 0
 		// to translateX in order to get back to default position
-		if ($this.hasClass('nav-logo')) {
+		if ($this.hasClass('nav-home')) {
 			pos = 0;
 		}
 		else {
@@ -38,8 +44,15 @@ $('main').on('flick', '.challenge .proof-photos', function(e) {
 		}
 
 		// batch dom changes
-		$this.addClass('is-selected');
+
+		// navigation cursor
 		$('.nav-item.is-selected').removeClass('is-selected');
+		$this.addClass('is-selected');
 		$('.nav-cursor').css('transform', 'translateX(' + pos + 'px)');
+
+		// page switch
+		$('#' + currentPage).removeClass('is-current');
+		$('#' + page).addClass('is-current');
+		currentPage = page;
     });
 })();
