@@ -27,7 +27,7 @@ $('main').on('flick', '.challenge .proof-photos', function(e) {
 
 	$('.nav-item').on('tap', function() {
         var $this = $(this),
-			page = $this.data('nav'),
+			page = $this.data('page'),
 			pos;
 
 		if (page == currentPage) return;
