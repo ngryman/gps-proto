@@ -26,6 +26,7 @@ $color-xdark-gray: rgb(43, 43, 43);
 
 /** pages */
 main {
+	position: relative;
 	padding-top: $header-height;
 	height: 100%;
 	@include min-normal {
@@ -42,7 +43,7 @@ button {
 }
 
 section {
-	height: 100%;
+	width: 100%;
 	background: $color-light-gray;
 	padding-top: .1rem;
 }
@@ -348,9 +349,10 @@ header {
 }
 
 .page {
-	display: none;
+	position: absolute;
+	visibility: hidden;
 
-	&.is-visible {
-		display: block;
+	&.is-current {
+		visibility: visible;
 	}
 }

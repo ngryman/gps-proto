@@ -26,14 +26,15 @@ $('main').on('flick', '.challenge .proof-photos', function(e) {
 	var currentPage = 'home';
 
 	$('.nav-item').on('tap', function() {
-        var $this = $(this), pos;
-		var page = $this.data('nav');
+        var $this = $(this),
+			page = $this.data('nav'),
+			pos;
 
-		if (page === currentPage) return;
+		if (page == currentPage) return;
 
 		// as logo is position with left 50% and jquery returns this value, this is much simple to explicitly set 0
 		// to translateX in order to get back to default position
-		if ($this.hasClass('nav-logo')) {
+		if ($this.hasClass('nav-home')) {
 			pos = 0;
 		}
 		else {
@@ -43,13 +44,15 @@ $('main').on('flick', '.challenge .proof-photos', function(e) {
 		}
 
 		// batch dom changes
+
+		// navigation cursor
 		$('.nav-item.is-selected').removeClass('is-selected');
-		$('#' + currentPage).removeClass('is-visible');
-
 		$this.addClass('is-selected');
-		$('#' + page).addClass('is-visible');
-		currentPage = page;
-
 		$('.nav-cursor').css('transform', 'translateX(' + pos + 'px)');
+
+		// page switch
+		$('#' + currentPage).removeClass('is-current');
+		$('#' + page).addClass('is-current');
+		currentPage = page;
     });
 })();
