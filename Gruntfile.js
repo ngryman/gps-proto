@@ -64,29 +64,28 @@ module.exports = function(grunt) {
 			tasks: ['build']
 		},
 		connect: {
-			server: {
-				options: {
-					hostname: '*',
-					port: 3000,
-					base: 'app',
-					keepalive: true
-				}
+			options: {
+				hostname: '*',
+				port: 3000,
+				base: 'app',
+				keepalive: true
+			},
+			all: {}
+		},
+		open: {
+			all: {
+				path: 'http://localhost:<%= connect.options.port %>'
 			}
 		}
 	});
 
 	// tasks deps
-	grunt.loadNpmTasks('grunt-contrib-jshint');
-	grunt.loadNpmTasks('grunt-contrib-gluejs');
-	grunt.loadNpmTasks('grunt-contrib-compass');
-	grunt.loadNpmTasks('grunt-contrib-htmlmin');
-	grunt.loadNpmTasks('grunt-mocha-cli');
-	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.loadNpmTasks('grunt-contrib-connect');
+	require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
 	// alias and utils tasks
 	grunt.registerTask('test', ['jshint', 'mochacli']);
 	grunt.registerTask('build', ['test', 'gluejs', 'compass']);
+	grunt.registerTask('preview', ['open', 'connect']);
 
 	// default task
 	grunt.registerTask('default', ['test']);
